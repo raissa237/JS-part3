@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, Sans-serif;
+}
+body{
+    background-color: #2f3542;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    color: #dfe4ea;
+}
+/*style du nom du jeu*/
+h1{
+    position: absolute;
+    font-size: 8vw;
+    color: #2f3542;
+    -webkit-text-stroke: 0.3vw #383d52;
+}
+h1::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #ffa502;
+    -webkit-text-stroke: 0.3vw #383d52;
+    border-right: 4px solid #ffa502;
+    overflow: hidden;
+    animation: parcours 6s linear infinite;
+}
+@keyframes parcours{
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,90%{
+        width: 100%;
+    }
+}
+/* le style de la partie question */
+.question {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+    background: #2f3542;
+    color: #dfe4ea;
+}
+.question h3 {
+    color: #ffa502;
+    font-size: 1.5rem;
+}
+.question .container .choices {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto 3rem;
+    width: 500px;
+}
+.question .container .choices button {
+    flex: 1 0 45%;
+    width: 200px;
+    height: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin: 0.4rem;
+    outline: none;
+    background: #dfe4ea;
+    user-select: none;
+    font-weight: 600;
+}
+.question .container .choices button:hover {
+    background: #ffa502;
+    transition: 0.5s;
+}
+.question .container .choices button:active {
+    transform: scale(0.9);
+    transition: transform 0.1s;
+}
+.question .container .choices button p {
+    font-size: 1.3rem;
+}
+.question #progress {
+    font-size: 1.3rem;
+    color: #ffa502;
+}
